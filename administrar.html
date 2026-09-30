@@ -215,7 +215,7 @@ function publicExportData(){let s=state.settings||{},fixedWeekly=(s.personalBloc
 window.getPublicCarteleraData=publicExportData;
 document.getElementById('exportPublicBtn').onclick=()=>{let blob=new Blob([JSON.stringify(publicExportData(),null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='cartelera-data.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);showToast('Cartelera pública exportada sin datos pastorales privados')};
 document.getElementById('exportBtn').onclick=()=>{let blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='corrales-pastorales.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)};document.getElementById('importBtn').onclick=()=>document.getElementById('importFile').click();document.getElementById('importFile').onchange=async e=>{let file=e.target.files[0];if(!file)return;try{let x=JSON.parse(await file.text());if(!Array.isArray(x.visits)||!x.settings)throw Error();if(confirm('¿Reemplazar las visitas y la agenda actuales con este archivo?')){state={visits:x.visits,settings:{...defaults,...x.settings}};save()}}catch{alert('No se pudo importar este archivo JSON.')}e.target.value=''};setInterval(()=>{if(settlePastVisits()){renderBoard();renderDelegation();renderAgenda();requestAnimationFrame(alignDelegateRail)}},60000);window.addEventListener('resize',alignDelegateRail);render();syncPublicMode();
-</script><script type="module" src="firebase-admin-sync.js"></script></body></html>
+</script><script type="module" src="firebase-admin-sync.js?v=2"></script></body></html>
 
 
 
