@@ -1,6 +1,12 @@
 {
   "version": 1,
-  "updatedAt": "2026-09-30T02:49:31.552631Z",
+  "updatedAt": "2026-09-30T03:12:41.867Z",
+  "profile": {
+    "name": "IMPANQN",
+    "address": "Denis y Elordi, Neuquén Capital",
+    "legal": "Registro Nacional de Culto 397 · Personería Jurídica 0509",
+    "logo": "logo.png"
+  },
   "availability": {
     "0": [],
     "1": [],
@@ -59,15 +65,100 @@
       ]
     ]
   },
-  "blockedWeekly": [],
+  "blockedWeekly": [
+    {
+      "days": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "start": "08:00",
+      "end": "09:00"
+    },
+    {
+      "days": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "start": "11:15",
+      "end": "13:00"
+    },
+    {
+      "days": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        0
+      ],
+      "start": "13:00",
+      "end": "14:30"
+    },
+    {
+      "days": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        0
+      ],
+      "start": "22:00",
+      "end": "23:00"
+    },
+    {
+      "days": [
+        4
+      ],
+      "start": "19:00",
+      "end": "22:00"
+    },
+    {
+      "days": [
+        0
+      ],
+      "start": "09:00",
+      "end": "13:00"
+    },
+    {
+      "days": [
+        6
+      ],
+      "start": "17:00",
+      "end": "22:00"
+    },
+    {
+      "days": [
+        1
+      ],
+      "start": "20:00",
+      "end": "21:30"
+    },
+    {
+      "days": [
+        1
+      ],
+      "start": "09:00",
+      "end": "11:10"
+    }
+  ],
   "blockedDates": [],
   "occupiedVisits": [],
   "publicWeekly": [],
-  "publicEvents": [],
-  "profile": {
-    "name": "IMPANQN",
-    "address": "Denis y Elordi, Neuquén Capital",
-    "legal": "Registro Nacional de Culto 397 · Personería Jurídica 0509",
-    "logo": "logo.png"
-  }
+  "publicEvents": [
+    {
+      "title": "Evento De Varones Cutral Co",
+      "date": "2026-10-03",
+      "start": "07:59",
+      "end": "23:59"
+    }
+  ]
 }
