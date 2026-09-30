@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-09-30T03:12:41.867Z",
+  "updatedAt": "2026-09-30T03:50:55.673Z",
   "profile": {
     "name": "Iglesia Metodista Pentecostal Argentina de Neuquén",
     "address": "Denis y Elordi, Neuquén Capital",
@@ -151,7 +151,13 @@
     }
   ],
   "blockedDates": [],
-  "occupiedVisits": [],
+  "occupiedVisits": [
+    {
+      "date": "2026-10-01",
+      "start": "16:00",
+      "duration": 120
+    }
+  ],
   "publicWeekly": [],
   "publicEvents": [
     {
