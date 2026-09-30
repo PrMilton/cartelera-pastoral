@@ -6,7 +6,7 @@ const config={apiKey:'AIzaSyBPNi8h-XNpwyISUoaDe5tjf4SjL0Z3I1o',authDomain:'carte
 const OWNER='miltong.nqn@gmail.com',app=initializeApp(config),auth=getAuth(app),db=getFirestore(app),button=document.getElementById('firebaseBtn'),status=document.getElementById('firebaseStatus');
 let timer=null,syncing=false;
 function setStatus(text,ok=false){status.textContent=text;status.style.color=ok?'#86efac':''}
-async function syncNow(){if(!auth.currentUser||syncing||!window.getPublicCarteleraData)return;syncing=true;setStatus('Sincronizando…');try{await setDoc(doc(db,'public','cartelera'),window.getPublicCarteleraData());setStatus('Sincronizado ahora',true)}catch(error){console.error(error);setStatus('No se pudo sincronizar')}finally{syncing=false}}
+async function syncNow(){if(!auth.currentUser||syncing||!window.getPublicCarteleraData)return;syncing=true;setStatus('Sincronizando…');try{const data=window.getPublicCarteleraData();await setDoc(doc(db,'public','cartelera'),{payload:JSON.stringify(data)});setStatus('Sincronizado ahora',true)}catch(error){console.error(error);setStatus('No se pudo sincronizar')}finally{syncing=false}}
 window.queueFirebasePublicSync=()=>{if(!auth.currentUser)return;clearTimeout(timer);timer=setTimeout(syncNow,700)};
 button.addEventListener('click',async()=>{try{if(auth.currentUser){await signOut(auth);return}setStatus('Abriendo acceso de Google…');await signInWithRedirect(auth,new GoogleAuthProvider())}catch(error){console.error(error);setStatus(location.protocol==='file:'?'Abre la versión publicada en GitHub':'No se pudo conectar')}});
 getRedirectResult(auth).catch(error=>{console.error(error);setStatus('No se pudo completar el acceso')});
